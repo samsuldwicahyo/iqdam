@@ -16,7 +16,7 @@
             background-color: #ffffff;
         }
         .ol-control > * {
-            background-color: #f8f8f8!important;
+            background-color: #f80000!important;
             color: #444444!important;
             border-radius: 0px;
         }
@@ -24,24 +24,33 @@
             color: #444444!important;
         }
         .search-layer-input-search {
-            background-color: #f8f8f8!important;
+            background-color: #f80000!important;
         }
         .ol-control > *:focus, .ol-control >*:hover {
-            background-color: rgba(248, 248, 248, 0.7)!important;
+            background-color: rgba(248, 0, 0, 0.7)!important;
         } 
         .ol-control {
             background-color: rgba(255,255,255,.4) !important;
             padding: 2px !important;
         } 
-        </style>
+        
+        /* CSS untuk label */
+        label {
+            display: block; /* Membuat label tampil dalam baris baru */
+            margin: 0.5rem 0; /* Menambahkan margin untuk jarak antar elemen */
+            font-size: 1rem; /* Mengatur ukuran font agar lebih terbaca */
+            color: #333333; /* Mengatur warna label */
+            font-weight: bold; /* Membuat teks label lebih tebal */
+        }
 
-        <style>
-        #map {
-            width: 1247px;
-            height: 714px;
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
         }
         </style>
-        <title></title>
+        <title>Map Application</title>
     </head>
     <body>
         <div id="map">
@@ -50,13 +59,64 @@
                 <div id="popup-content"></div>
             </div>
         </div>
+
+        <!-- Contoh penggunaan label -->
+        <div>
+            <label for="search">Search Location</label>
+            <input type="text" id="search" placeholder="Enter location">
+        </div>
+
         <script src="resources/qgis2web_expressions.js"></script>
         <script src="./resources/functions.js"></script>
         <script src="./resources/ol.js"></script>
         <script src="./resources/ol-layerswitcher.js"></script>
         <script src="resources/ol-geocoder.js"></script>
-        <script src="layers/ADMINISTRASIDESA_AR_25K_1.js"></script><script src="layers/AGRISAWAH_AR_25K_2.js"></script><script src="layers/PEMUKIMAN_AR_25K_3.js"></script><script src="layers/SARANAIBADAH_PT_25K_4.js"></script><script src="layers/PENDIDIKAN_PT_25K_5.js"></script><script src="layers/PEMERINTAHAN_PT_25K_6.js"></script><script src="layers/kalialang_poly_7.js"></script><script src="layers/kalialang_line_8.js"></script><script src="layers/kalialang_point_9.js"></script><script src="layers/ADMINISTRASIDESA_AR_25Kcopy_10.js"></script><script src="layers/kesehatan_11.js"></script>
-        <script src="styles/ADMINISTRASIDESA_AR_25K_1_style.js"></script><script src="styles/AGRISAWAH_AR_25K_2_style.js"></script><script src="styles/PEMUKIMAN_AR_25K_3_style.js"></script><script src="styles/SARANAIBADAH_PT_25K_4_style.js"></script><script src="styles/PENDIDIKAN_PT_25K_5_style.js"></script><script src="styles/PEMERINTAHAN_PT_25K_6_style.js"></script><script src="styles/kalialang_poly_7_style.js"></script><script src="styles/kalialang_line_8_style.js"></script><script src="styles/kalialang_point_9_style.js"></script><script src="styles/ADMINISTRASIDESA_AR_25Kcopy_10_style.js"></script><script src="styles/kesehatan_11_style.js"></script>
+        <script src="layers/ADMINISTRASIDESA_AR_25K_1.js"></script>
+        <script src="layers/AGRISAWAH_AR_25K_2.js"></script>
+        <script src="layers/SUNGAI_AR_25K_3.js"></script>
+        <script src="layers/AGRILADANG_AR_25K_4.js"></script>
+        <script src="layers/NONAGRIALANG_AR_25K_5.js"></script>
+        <script src="layers/PEMUKIMAN_AR_25K_6.js"></script>
+        <script src="layers/AGRIKEBUN_AR_25K_7.js"></script>
+        <script src="layers/RELKA_LN_25K_8.js"></script>
+        <script src="layers/SUNGAI_LN_25K_9.js"></script>
+        <script src="layers/PEMERINTAHAN_PT_25K_10.js"></script>
+        <script src="layers/PENDIDIKAN_PT_25K_11.js"></script>
+        <script src="layers/KESEHATAN_PT_25K_12.js"></script>
+        <script src="layers/TAMBANGAN_PT_25K_13.js"></script>
+        <script src="layers/SARANAIBADAH_PT_25K_14.js"></script>
+        <script src="layers/TOPONIMI_PT_25K_15.js"></script>
+        <script src="layers/KANTORPOS_PT_25K_16.js"></script>
+        <script src="layers/BANGUNAN_PT_25K_17.js"></script>
+        <script src="layers/JEMBATAN_PT_25K_18.js"></script>
+        <script src="layers/TONGGAKKM_PT_25K_19.js"></script>
+        <script src="layers/iqdam_poly_20.js"></script>
+        <script src="layers/iqdam_line_21.js"></script>
+        <script src="layers/iqdam_point_22.js"></script>
+        <script src="layers/ADMINISTRASIDESA_AR_25Kcopy_23.js"></script>
+        <script src="styles/ADMINISTRASIDESA_AR_25K_1_style.js"></script>
+        <script src="styles/AGRISAWAH_AR_25K_2_style.js"></script>
+        <script src="styles/SUNGAI_AR_25K_3_style.js"></script>
+        <script src="styles/AGRILADANG_AR_25K_4_style.js"></script>
+        <script src="styles/NONAGRIALANG_AR_25K_5_style.js"></script>
+        <script src="styles/PEMUKIMAN_AR_25K_6_style.js"></script>
+        <script src="styles/AGRIKEBUN_AR_25K_7_style.js"></script>
+        <script src="styles/RELKA_LN_25K_8_style.js"></script>
+        <script src="styles/SUNGAI_LN_25K_9_style.js"></script>
+        <script src="styles/PEMERINTAHAN_PT_25K_10_style.js"></script>
+        <script src="styles/PENDIDIKAN_PT_25K_11_style.js"></script>
+        <script src="styles/KESEHATAN_PT_25K_12_style.js"></script>
+        <script src="styles/TAMBANGAN_PT_25K_13_style.js"></script>
+        <script src="styles/SARANAIBADAH_PT_25K_14_style.js"></script>
+        <script src="styles/TOPONIMI_PT_25K_15_style.js"></script>
+        <script src="styles/KANTORPOS_PT_25K_16_style.js"></script>
+        <script src="styles/BANGUNAN_PT_25K_17_style.js"></script>
+        <script src="styles/JEMBATAN_PT_25K_18_style.js"></script>
+        <script src="styles/TONGGAKKM_PT_25K_19_style.js"></script>
+        <script src="styles/iqdam_poly_20_style.js"></script>
+        <script src="styles/iqdam_line_21_style.js"></script>
+        <script src="styles/iqdam_point_22_style.js"></script>
+        <script src="styles/ADMINISTRASIDESA_AR_25Kcopy_23_style.js"></script>
         <script src="./layers/layers.js" type="text/javascript"></script> 
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>

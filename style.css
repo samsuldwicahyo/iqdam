@@ -1,0 +1,168 @@
+/* Mengatur margin dan padding dasar untuk seluruh elemen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mengatur styling untuk navbar */
+.navbar {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Menambah margin pada bagian bawah navbar */
+.navbar-nav .nav-item {
+  margin-left: 1.5rem;
+}
+
+.nav-link {
+  color: #ffffff !important;
+  text-decoration: none; /* Tambahkan untuk menghindari garis bawah pada link */
+}
+
+/* Style untuk bagian banner */
+.banner {
+  background: url('https://i.ytimg.com/vi/VRkDTlTqogE/maxresdefault.jpg') no-repeat center center/cover;
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Overlay Effect */
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan opacity 50% */
+  z-index: 1;
+}
+
+/* Banner Content */
+.banner .container {
+  position: relative;
+  z-index: 2; /* Di atas overlay */
+}
+
+/* Mengatur styling untuk h3 dan h5 di banner */
+.banner h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.banner h5 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  z-index: 2;
+}
+
+/* Tombol pada Banner */
+.banner .btn {
+  z-index: 2;
+  background-color: rgba(255, 0, 0, 0.8); /* Warna merah dengan sedikit transparansi */
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style untuk section "tentang" */
+#tentang {
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+/* Style untuk paragraf di container */
+.container p {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #666666;
+}
+
+/* Style untuk section "peta-wilayah" */
+.peta-wilayah {
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+}
+
+.peta-wilayah h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333333;
+}
+
+.peta-wilayah iframe {
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  width: 100%;
+  height: 500px;
+  margin-top: 1rem;
+}
+
+/* Mengatur Deskripsi Peta Interaktif */
+.DeskripsiPetaInteraktif {
+  padding: 2rem;
+  color: #333333;
+}
+
+.DeskripsiPetaInteraktif h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Media queries untuk responsivitas */
+@media (max-width: 992px) {
+  .banner h3 {
+    font-size: 2rem;
+  }
+
+  .banner h5 {
+    font-size: 1.2rem;
+  }
+
+  .btn-danger {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-item {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .container p {
+    font-size: 0.9rem;
+  }
+
+  #tentang,
+  .peta-wilayah h2,
+  .DeskripsiPetaInteraktif h2 {
+    font-size: 1.8rem;
+  }
+
+  .peta-wilayah iframe {
+    height: 300px;
+  }
+}

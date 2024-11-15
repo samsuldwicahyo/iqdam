@@ -1,241 +1,124 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peta Desa Karangtalun Lor</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-:root {
-  --bg-light: #ffe6f2; /* Warna pink pastel untuk latar belakang terang */
-  --bg-dark: #2b2b2b; /* Warna gelap tetap digunakan */
-  --text-light: #5e2b5a; /* Warna ungu pastel untuk teks pada latar terang */
-  --text-dark: #ffccff; /* Warna pink terang untuk teks pada latar gelap */
-  --navbar-light: #ff80ab; /* Warna pink terang untuk navbar */
-  --navbar-dark: #4a4a4a; /* Warna abu-abu gelap untuk navbar saat mode gelap */
-  --highlight-light: #ffb3c6; /* Warna highlight pink pastel */
-  --highlight-dark: #555; /* Warna highlight tetap gelap */
-}
-
-body {
-  background-color: var(--bg-light);
-  color: var(--text-light);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar {
-  background-color: var(--navbar-light);
-  transition: background-color 0.3s;
-}
-
-.hero-section {
-  background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmJiPN5xOo_V6KETFFmMW4Smoio_67uQdAcI_ZoiuWCIMY6Q5PY1dvtfHJEhbJQQQvts9e1OKGSf4GAAjUlJCBquFudHLgGiAV1deqDYudp0O-hLAia7W4p2U-iyPQqTJL8rs7VIu_cPWpRhzqj2FdCeOM-Je7HPan2wp46ii2dWqRs5uTzyNXrhxL/s1600/20220806_0955060981.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  padding: 100px 0;
-  position: relative;
-  margin-top: 70px; /* Sesuaikan dengan tinggi navbar */
-}
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: auto;
-}
-
-.dark-mode {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
-}
-
-.dark-mode .navbar {
-  background-color: var(--navbar-dark);
-}
-
-.section {
-  padding: 50px 0;
-}
-
-.dark-mode .bg-light {
-  background-color: var(--bg-dark) !important;
-}
-
-.dark-mode .bg-info {
-  background-color: var(--highlight-dark) !important;
-}
-
-.footer {
-  background-color: var(--navbar-light);
-  color: var(--text-light);
-  padding: 20px 0;
-}
-
-.dark-mode .footer {
-  background-color: var(--navbar-dark);
-  color: var(--text-dark);
-}
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-#theme-toggle {
-  border: none;
-  background-color: #ff66b2; /* Warna pink terang untuk tombol light mode */
-  color: #fff;
-  font-size: 18px;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Warna tombol saat mode gelap */
-.dark-mode #theme-toggle {
-  background-color: #9c27b0; /* Warna ungu tua untuk tombol dark mode */
-  color: #ffccff;
-}
-
-/* Hover efek untuk tombol toggle */
-#theme-toggle:hover {
-  background-color: #ff4081; /* Pink terang untuk hover di light mode */
-}
-
-.dark-mode #theme-toggle:hover {
-  background-color: #7b1fa2; /* Ungu lebih gelap untuk hover di dark mode */
-}
-
-
-  </style>
-</head>
-<body>
-  <!-- Navbar -->
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <i class="fas fa-map-marker-alt"></i> Desa 
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" href="#home"><i class="fas fa-home"></i> Beranda</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#map"><i class="fas fa-map"></i> Peta</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#description"><i class="fas fa-info-circle"></i> Keterangan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about"><i class="fas fa-users"></i> Tentang</a>
-          </li>
-        </ul>
-        <button id="theme-toggle">
-          <i id="theme-icon" class="fas fa-sun"></i>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kesugihan Kidul</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- navigasi -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          Desa Kesugihan Kidul
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          >
+          <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="collapse navbar-collapse text-right" id="navbarText">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#peta-wilayah">Peta Wilayah</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tentang">Tentang Desa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#DeskripsiPetaInteraktif">Deskripsi Peta Interaktif</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- banner -->
+    <div class="container-fluid banner">
+      <div class="container text-center">
+        <h5 class="display-6 text-white">Selamat Datang di Website Peta Interaktif Kesugihan Kidul</h5>
+        <h3 class="display-1 text-white">Halo!</h3>
+        <a href="#peta-wilayah">
+          <button type="button" class="btn btn-danger btn-lg">Peta Wilayah</button>
+        </a>
       </div>
     </div>
-  </nav>
-  
 
-<!-- Bagian Beranda -->
-<div class="hero-section text-center" id="home">
-  <div class="container hero-content">
-    <h1 class="display-5">Selamat Datang di Desa Kali Alang</h1>
-    <p class="lead">
-      Desa Kali Alang, terletak di Kecamatan Sokaraja, Kabupaten Banyumas. Desa ini menawarkan pemandangan alam yang asri dengan sentuhan budaya lokal yang masih terjaga, menjadikannya salah satu destinasi menarik di wilayah Sokaraja.
-    </p>
-  </div>
-</div>
+    <!-- tentang -->
+    <div class="container-fluid pt-5 pb-5">
+      <div class="container">
+        <h2 class="display-3 text-center" id="tentang">Tentang Desa</h2>
+        <p class="text-center">Seputar mengenai Desa Kesugihan Kidul</p>
+        <div class="clearfix pt-5">
+          <p>
+            Desa Kesugihan Kidul, yang terletak di Kecamatan Kesugihan, memiliki sejumlah karakteristik yang mencerminkan kehidupan masyarakat pedesaan yang khas.
+            Dengan jumlah RT dan RW yang terstruktur, desa ini menjadi pusat aktivitas sosial dan ekonomi bagi penduduk lokal. Penduduknya dikenal akan kekompakan dalam kegiatan gotong royong, serta kekayaan tradisi dan budaya yang masih terus dipertahankan.
+          </p>
+          <p>
+            Lokasi Desa Kesugihan Kidul yang strategis di Kecamatan Kesugihan membuat akses menuju fasilitas umum seperti pasar, sekolah, dan layanan kesehatan menjadi lebih mudah.
+            Keberadaan berbagai kegiatan sosial seperti perayaan hari besar dan lomba antar-RT/RW membantu mempererat hubungan sosial di antara warganya.
+          </p>
+        </div>
+      </div>
+    </div>
 
-<!-- Bagian Peta -->
-<section id="map" class="bg-light section">
-  <div class="container text-center">
-    <h2><i class="fas fa-map-marked-alt"></i> Peta Desa Kali Alang</h2>
-    <iframe src="Peta.html" style="width: 100%; height: 500px; border: none;"></iframe>
-  </div>
-</section>
+    <!-- Peta Wilayah -->
+    <div class="container-fluid peta-wilayah pt-5 pb-5">
+      <div class="container text-center">
+        <h2 class="display-3" id="peta-wilayah">Peta Wilayah</h2>
+        <p>Berikut adalah peta wilayah yang dapat membantu Anda menemukan area tertentu di Desa Kesugihan Kidul.</p>
+        <div class="row pt-4">
+          <div class="col-md-12">
+            <iframe
+              src="peta.html"
+              width="100%"
+              height="600px"
+              style="border: none"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!-- Bagian Keterangan -->
-<section id="description" class="bg-info section">
-  <div class="container">
-    <h2><i class="fas fa-info-circle"></i> Keterangan</h2>
-    <p>
-      Desa Kali Alang merupakan desa yang terkenal dengan potensi alam dan pertaniannya di Kecamatan Sokaraja. Wilayah ini didominasi oleh lahan pertanian, perkebunan, serta beberapa sentra usaha kecil menengah yang memproduksi kerajinan tangan khas Banyumas.
-    </p>
-    <p>
-      Desa ini memiliki akses yang cukup baik dengan tersedianya angkutan umum dan jalur transportasi yang memudahkan warga maupun pengunjung untuk beraktivitas. Keberadaan pasar desa dan warung tradisional memberikan akses mudah bagi masyarakat untuk mendapatkan kebutuhan sehari-hari.
-    </p>
-    <p>
-      Kehidupan masyarakat di Kali Alang sangat beragam, terdiri dari petani, pedagang, dan pelaku usaha kecil. Desa ini juga memiliki beberapa fasilitas pendidikan dasar serta kegiatan keagamaan dan sosial yang aktif, mencerminkan masyarakat yang kompak dan peduli terhadap lingkungan sekitar.
-    </p>
-    <p>
-      Di Desa Kali Alang, terdapat beberapa area rekreasi dan taman desa yang sering digunakan oleh warga untuk berolahraga dan berkumpul. Selain itu, desa ini juga memiliki area persawahan yang menawarkan pemandangan hijau nan indah, menjadi daya tarik tersendiri bagi pengunjung yang ingin menikmati suasana pedesaan yang tenang.
-    </p>
-  </div>
-</section>
+    <!-- Deskripsi Peta Interaktif -->
+    <div class="container-fluid pt-5 pb-5 DeskripsiPetaInteraktif">
+      <div class="container">
+        <h2 class="display-3 text-center" id="DeskripsiPetaInteraktif">Peta Interaktif Desa Kesugihan Kidul</h2>
+        <p class="text-justify">
+          Peta interaktif Desa Kesugihan Kidul dirancang untuk memudahkan akses informasi geografis dan administratif bagi warganya.
+          Dengan antarmuka yang intuitif, peta ini memungkinkan pengguna untuk memperbesar atau memperkecil tampilan, menelusuri wilayah, dan menemukan lokasi spesifik seperti fasilitas umum terdekat.
+          Fitur pencarian membantu pengguna menemukan layanan publik penting, sehingga memudahkan koordinasi antarwarga.
+        </p>
+      </div>
+    </div>
 
-<!-- Bagian Tentang -->
-<section id="about" class="bg-dark text-light section">
-  <div class="container">
-    <h2><i class="fas fa-users"></i> Tentang Desa Kali Alang</h2>
-    <p>
-      Desa Kali Alang terletak di Kecamatan Sokaraja, Kabupaten Banyumas. Desa ini menjadi bagian dari pusat kegiatan agrikultur di wilayah Sokaraja, dengan fokus pada pertanian dan perkebunan yang menghasilkan berbagai produk unggulan seperti padi, sayur-mayur, dan buah-buahan.
-    </p>
-    <p>
-      Meskipun berkembang dengan fokus agrikultur, Desa Kali Alang tetap mempertahankan nilai budaya lokal dengan sering mengadakan acara adat, seperti sedekah bumi dan kesenian kuda lumping yang menjadi daya tarik bagi warga lokal maupun wisatawan.
-    </p>
-    <p>
-      Beberapa ikon desa yang dikenal adalah masjid tua yang menjadi pusat kegiatan keagamaan, serta area persawahan yang menawarkan pemandangan menyejukkan mata. Desa ini juga terkenal dengan kuliner lokal seperti tempe mendoan dan soto Sokaraja yang menjadi favorit bagi pengunjung.
-    </p>
-    <p>
-      Dengan perkembangan infrastruktur yang semakin baik, Desa Kali Alang terus berupaya meningkatkan fasilitas publik seperti jalan desa yang lebih baik, layanan kesehatan, dan pendidikan. Hal ini menjadikan Desa Kali Alang sebagai salah satu desa yang menarik untuk dikunjungi maupun dijadikan tempat tinggal.
-    </p>
-  </div>
-</section>
+    <!-- Footer -->
+    <div class="footer bg-dark text-white text-center pt-3 pb-3">
+      <p>Peta Interaktif Desa Kesugihan Kidul Created By Muhamad Iqdam Musabik - NIM: 22SA21A205, 2024</p>
+    </div>
 
-  
-  <!-- Footer -->
-  <footer class="footer text-center">
-    <p>&copy; 2024 Peta Desa Kalialang | Dibuat oleh Irmawati Tri Wahyuni</p>
-  </footer>
-  
-  <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const body = document.body;
-
-    function toggleTheme() {
-      body.classList.toggle('dark-mode');
-      if (body.classList.contains('dark-mode')) {
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
-      } else {
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
-      }
-    }
-
-    themeToggle.addEventListener('click', toggleTheme);
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
 </html>
